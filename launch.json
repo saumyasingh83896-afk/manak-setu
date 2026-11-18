@@ -1,0 +1,54 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🚀 Python: FastAPI Backend (server.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "server:app",
+        "--reload",
+        "--port",
+        "8000"
+      ],
+      "jinja": true,
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "🧠 Python: Build Vector Index (build_index.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/build_index.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "🧪 Python: Test RAG (test_rag.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/test_rag.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "🌐 Frontend: Launch Chrome (localhost:5173)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "🔥 Full Stack: FastAPI Backend + Frontend",
+      "configurations": [
+        "🚀 Python: FastAPI Backend (server.py)",
+        "🌐 Frontend: Launch Chrome (localhost:5173)"
+      ]
+    }
+  ]
+}
